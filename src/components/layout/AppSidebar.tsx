@@ -44,11 +44,11 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" className="border-none">
-      <SidebarHeader className="bg-gray-900 text-white flex items-center justify-center">
+    <Sidebar collapsible="icon" className="border-r border-neutral-700">
+      <SidebarHeader className="bg-neutral-800 text-white flex items-center justify-center">
         <SidebarTrigger />
       </SidebarHeader>
-      <SidebarContent className="bg-gray-900 text-white">
+      <SidebarContent className="bg-neutral-800 text-white">
         <SidebarGroup>
           <SidebarGroupLabel className="text-white">Application</SidebarGroupLabel>
           <SidebarGroupContent>

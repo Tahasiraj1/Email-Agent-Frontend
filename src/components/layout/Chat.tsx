@@ -98,7 +98,7 @@ const Chat = () => {
         <div className="space-y-4 z-0">
           {messages.length === 0 && (
             <div className="text-center py-12 animate-fade-in">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center shadow-lg animate-pulse">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-neutral-800 flex items-center justify-center shadow-lg">
                 <MessageCircle className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -122,11 +122,11 @@ const Chat = () => {
               {/* Avatar */}
               <Avatar className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0">
                 {message.role === "user" ? (
-                  <AvatarFallback className="bg-gradient-to-r from-slate-900 to-slate-700">
+                  <AvatarFallback className="bg-neutral-800">
                     you
                   </AvatarFallback>
                 ) : (
-                  <AvatarFallback className="bg-gradient-to-br from-teal-800 via-teal-500 to-[#373069] text-white rounded-full">
+                  <AvatarFallback className="bg-neutral-800 text-white rounded-full">
                     AI
                   </AvatarFallback>
                 )}
@@ -138,7 +138,7 @@ const Chat = () => {
                   "rounded-2xl px-4 py-2 max-w-full break-words",
                   message.role === "user"
                     ? "bg-gray-200 text-black rounded-br-md"
-                    : "bg-gray-300 text-gray-900 rounded-bl-md"
+                    : "bg-gray-200 text-black rounded-bl-md"
                 )}
               >
                 <div className="whitespace-pre-wrap">{message.content}</div>
@@ -172,13 +172,13 @@ const Chat = () => {
         </div>
       </ScrollArea>
 
-      <div className="w-full py-2 flex flex-col bg-neutral-800 rounded-lg px-2">
+      <div className="w-full py-2 flex flex-col bg-neutral-800 rounded-xl px-2">
         <div className="flex items-end gap-3 rounded-2xl">
           <Input
             value={input}
             onChange={handleInputChange}
             onKeyDown={onKeyDown}
-            className="flex-1 border-none bg-transparent text-white placeholder-gray-200 resize-none min-h-[44px] text-base"
+            className="flex-1 border-none bg-transparent text-white placeholder-gray-200 resize-none min-h-[60px] text-base"
             placeholder="Type your message..."
             disabled={status === "submitted"}
           />
@@ -186,7 +186,7 @@ const Chat = () => {
             onClick={handleSubmit}
             disabled={!input.trim() || status === "submitted"}
             size="icon"
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-xl shadow-md transition-all duration-200 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="bg-neutral-400 hover:bg-neutral-500 text-black rounded-full mb-2"
           >
             <ArrowUp className="w-5 h-5" />
           </Button>

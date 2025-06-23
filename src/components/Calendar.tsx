@@ -42,7 +42,7 @@ const Calendar = () => {
       ) : (
         <ul className="space-y-4">
           {events.map(event => (
-            <li key={event.id} className="border border-neutral-700 p-4 rounded-lg shadow bg-neutral-900">
+            <li key={event.id} className="border border-neutral-700 p-4 rounded-lg shadow bg-neutral-800">
               <h3 className="text-lg font-semibold">{event.summary}</h3>
               <p className="text-sm text-gray-600">
                 {formatDate(event.start)} → {formatDate(event.end)}
