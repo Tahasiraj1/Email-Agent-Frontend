@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 import { Input } from "../ui/input";
 
 interface Message {
-    role: string;
-    content: string;
+  role: string;
+  content: string;
 }
 
 const Chat = () => {
@@ -19,13 +19,33 @@ const Chat = () => {
   const [input, setInput] = React.useState("");
   const [messages, setMessages] = React.useState<Message[]>([]);
 
-  const [status, setStatus] = React.useState<
-    "idle" | "submitted"
-  >("idle");
+  const [status, setStatus] = React.useState<"idle" | "submitted">("idle");
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  })
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  });
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fetch("/api/chat", {
+  //       method: "GET",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.content.length > 0) {
+  //           setMessages((prev) => [
+  //             ...prev,
+  //             { role: data.role, content: data.content },
+  //           ]);
+  //         }
+  //       })
+  //       .catch((err) => {
+  //         console.error("Error fetching logs:", err);
+  //       });
+  //   }, 10000); // every 10 seconds
+
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);

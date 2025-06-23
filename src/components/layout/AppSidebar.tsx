@@ -17,7 +17,7 @@ import {
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
@@ -27,7 +27,7 @@ const items = [
   },
   {
     title: "Calendar",
-    url: "#",
+    url: "/calendar",
     icon: Calendar,
   },
   {
@@ -45,10 +45,10 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" className="border-none">
-      <SidebarHeader className="bg-gradient-to-r from-slate-900 to-slate-700 text-white">
+      <SidebarHeader className="bg-gray-900 text-white flex items-center justify-center">
         <SidebarTrigger />
       </SidebarHeader>
-      <SidebarContent className="bg-gradient-to-r from-slate-900 to-slate-700 text-white">
+      <SidebarContent className="bg-gray-900 text-white">
         <SidebarGroup>
           <SidebarGroupLabel className="text-white">Application</SidebarGroupLabel>
           <SidebarGroupContent>
